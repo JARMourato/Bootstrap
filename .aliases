@@ -1,0 +1,38 @@
+#!/bin/bash
+
+################################################################################
+### Configure System-Wide Aliases
+################################################################################
+
+
+# Opens a Sourcetree window using the given path, if needed.
+# Example: `sourcetree .` opens a new Sourcetree window for the current directory
+#          or focuses on the open one if there's one open already.
+function sourcetree() {
+  open -a Sourcetree "$1"
+}
+
+function doit() {
+  sourcetree "$1"
+  txt "$1"
+}
+
+function txt() {
+  "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$1"
+}
+
+# This command kills and relaunches several audio and bluetooth related processes,
+# fixing issues bluetooth headsets malfunctioning.
+function killaudio() {
+  sudo kill `pgrep coreaudiod`
+  sudo kill `pgrep bluetoothd`
+  sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
+  sudo kextload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
+  sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
+}
+
+# gpg-agent eventually dies, randomly, failing to sign commits. This command kills existing gpg-agent process and relaunches it.
+alias killgpg="pkill gpg-agent && gpg-agent --daemon"
+
+# Opens the Google Play Store console (beta view), ready to publish a new version of the app
+alias playstore="open -a safari https://play.google.com/console/u/1/developers/6280656057399977520/app-list"

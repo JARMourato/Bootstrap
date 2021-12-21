@@ -1,0 +1,11 @@
+export PATH="$HOME/Library/Python/2.7/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+# Enable use of `gmake` aliased as `make`
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH" 
+
+export JAVA_HOME=/Applications/Android\ Studio.app/Contents/jre/Contents/Home
+
+# Adds Homebrew to PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
