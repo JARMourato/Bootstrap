@@ -31,6 +31,14 @@ function killaudio() {
   sudo kextunload -b com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport
 }
 
+# Bootstrap
+function bootstrap() {
+    git clone git@github.com:JARMourato/"$1"-bootstrap.git ~/Workspace/Temp/"$1"-bootstrap
+    cd ~/Workspace/Temp/"$1"-bootstrap
+    ./bootstrap.sh
+    rm -rf ~/Workspace/Temp
+}
+
 # gpg-agent eventually dies, randomly, failing to sign commits. This command kills existing gpg-agent process and relaunches it.
 alias killgpg="pkill gpg-agent && gpg-agent --daemon"
 
