@@ -64,7 +64,7 @@ mkdir ~/Workspace/Git
 #### Start Configuration Process
 #################################################################################
 
-git clone git@github.com:jarmourato/dotfiles.git ~/Workspace/Git/dotfiles
-cd ~/Workspace/Git/dotfiles
+git clone git@github.com:jarmourato/Bootstrap.git ~/Workspace/Git/Bootstrap
+cd ~/Workspace/Git/Bootstrap
 ./_set_up.sh
 echo "Done"
