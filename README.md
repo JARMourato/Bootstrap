@@ -29,3 +29,5 @@ Mathias’s dotfiles - https://github.com/mathiasbynens/dotfiles - via [@mathias
 Roger’s dotfiles - https://github.com/rogerluan/dotfiles - via [@rogerluan_](https://twitter.com/rogerluan_)
 
 Moving to zsh, part 2: Configuration Files - https://scriptingosx.com/2019/06/moving-to-zsh-part-2-configuration-files/ - via [@scriptingosx](https://twitter.com/scriptingosx)
+
+Reading defaults - https://superuser.com/questions/455755/how-to-explore-more-defaults-write-tweaks-on-os-x

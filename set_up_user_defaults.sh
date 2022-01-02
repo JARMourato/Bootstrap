@@ -49,19 +49,20 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerHorizSwipeGesture -int 1
-#defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerVertSwipeGesture -int 1
-#
-#defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
-#defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
-#defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
-#defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 1
-#
-#defaults -currentHost write -g com.apple.mouse.tapBehavior -int 1
-#defaults write -g com.apple.mouse.tapBehavior -int 1
+# Haptic feedback
+# 0: Light
+# 1: Medium
+# 2: Firm
+defaults write com.apple.AppleMultitouchTrackpad FirstClickThreshold -int 0
+defaults write com.apple.AppleMultitouchTrackpad SecondClickThreshold -int 0
 
-# Set the pointer tracking speed when using a trackpad. Value ranges from 0 to 3
-defaults write -g com.apple.trackpad.scaling -float 2.5
+# Tracking Speed
+# 0: Slow
+# 3: Fast
+defaults write NSGlobalDomain com.apple.trackpad.scaling -float 2.5
+
+# Enable swipe between pages
+defaults write AppleEnableSwipeNavigateWithScrolls -bool false
 
 # Hot corners
 # Possible values:
