@@ -31,7 +31,7 @@ if [[ "$xcodepath" == *"Xcode"* ]]; then
 else 
 	# Install Xcode 
 	brew install --cask xcodes
-	/bin/bash -c "$(open -a xcodes)"
+	/bin/bash -c "$(open -a Xcodes)"
 	read -p "Press enter to continue after installing Xcode..." < /dev/tty
 	
 	if [[ "$xcodepath" != *"Xcode"* ]]; then
