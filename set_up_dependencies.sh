@@ -24,17 +24,18 @@ source ~/.zshrc
 echo "🍺 Updating homebrew..."
 brew update
 
-xcodepath=`xcode-select -p`
+# Check Xcode
+xcode=`ls /Applications | grep 'Xcode-'`
 
-if [[ "$xcodepath" == *"Xcode"* ]]; then
+if [[ ! -z "$xcode" ]]; then
 	echo "Xcode is already installed 🎉"
-else 
+else
 	# Install Xcode 
 	brew install --cask xcodes
 	/bin/bash -c "$(open -a Xcodes)"
 	read -p "Press enter to continue after installing Xcode..." < /dev/tty
 	
-	if [[ "$xcodepath" != *"Xcode"* ]]; then
+	if [[ -z "$xcode" ]]; then
 		echo "Xcode not installed"
 		exit 1
 	fi
