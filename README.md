@@ -11,7 +11,7 @@ Before doing anything, make sure you know what are you doing! Settings applied b
 1. Run this the script
 
 ```
-curl -Lks https://raw.githubusercontent.com/JARMourato/Bootstrap/main/bootstrap.sh | /bin/bash -x
+bash <(curl -Lks https://raw.githubusercontent.com/JARMourato/Bootstrap/main/bootstrap.sh)
 ```
 
 2. Reboot.
