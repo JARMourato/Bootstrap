@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e # Immediately rethrows exceptions
-
 ################################################################################
 ### Configure SSH key
 ################################################################################
@@ -82,6 +80,8 @@ fi
 ##################################################################################
 ##### Start Configuration Process
 ##################################################################################
+# 
+# set -e # Immediately rethrows exceptions
 #
 #git clone git@github.com:jarmourato/Bootstrap.git ~/Workspace/Git/Bootstrap
 #cd ~/Workspace/Git/Bootstrap
