@@ -12,14 +12,14 @@ echo "🚀 Starting setup"
 # Ask for the administrator password upfront
 sudo -v
 
-# In case paths have not been set up yet
-source ~/.zshrc
-
 # Install Homebrew if not already installed
 if test ! $(which brew); then
 	echo "🍺 Installing homebrew..."
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
+
+# In case paths have not been set up yet
+source ~/.zshrc
 
 echo "🍺 Updating homebrew..."
 brew update
