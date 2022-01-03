@@ -58,6 +58,7 @@ if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${x
 else
    echo "Need to install xcode tools"
    xcode-select --install
+   echo "Requested install"
    read -p "Press enter to continue after completing the installation..."
 fi
 
