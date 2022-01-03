@@ -183,6 +183,30 @@ defaults write com.apple.dock mru-spaces -bool false
 # Don’t show recent applications in Dock
 #defaults write com.apple.dock show-recents -bool false
 
+# Add applications to Dock
+defaults write com.apple.dock persistent-others -array-add "<dict>
+    <key>tile-data</key>
+    <dict>
+        <key>arrangement</key>
+        <integer>1</integer>
+        <key>displayas</key>
+        <integer>0</integer>
+        <key>file-data</key>
+        <dict>
+            <key>_CFURLString</key>
+            <string>file:///Applications/</string>
+            <key>_CFURLStringType</key>
+            <integer>15</integer>
+        </dict>
+        <key>preferreditemsize</key>
+        <string>-1</string>
+        <key>showas</key>
+        <integer>0</integer>
+    </dict>
+    <key>tile-type</key>
+    <string>directory-tile</string>
+</dict>"
+
 ################################################################################
 # Terminal                                                                     #
 ################################################################################
