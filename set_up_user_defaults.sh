@@ -49,6 +49,9 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
+# Silent clicking
+defaults write com.apple.AppleMultitouchTrackpad ActuationStrength -int 0
+
 # Haptic feedback
 # 0: Light
 # 1: Medium
