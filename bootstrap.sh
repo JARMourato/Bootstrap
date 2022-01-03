@@ -51,6 +51,18 @@ else
    read -p "Press enter to continue after completing ssh setup in github..."
 fi 
 
+##################################################################################
+##### Command line developer tools
+##################################################################################
+
+installed=`xcode-select -p 1>/dev/null`
+if [ $installed != 0 ]; then
+   echo "Need to install xcode tools"
+   read -p "Press enter to continue after completing the installation..."
+else
+   echo "Xcode Command Line Tools already installed"
+fi
+
 #
 ##################################################################################
 ##### Configure Directories
