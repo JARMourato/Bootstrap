@@ -21,6 +21,12 @@ function txt() {
   "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" "$1"
 }
 
+function commit() {
+  git add .
+  git commit -m "$1"
+  git push
+}
+
 # This command kills and relaunches several audio and bluetooth related processes,
 # fixing issues bluetooth headsets malfunctioning.
 function killaudio() {
