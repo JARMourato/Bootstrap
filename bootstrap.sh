@@ -55,13 +55,20 @@ fi
 ##### Command line developer tools
 ##################################################################################
 
-installed=`xcode-select -p 1>/dev/null`
-if [ $installed != 0 ]; then
+if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}" ; then
+   echo "Xcode Command Line Tools already installed"
+else
    echo "Need to install xcode tools"
    read -p "Press enter to continue after completing the installation..."
-else
-   echo "Xcode Command Line Tools already installed"
 fi
+
+#installed=`xcode-select -p 1>/dev/null`
+#if [ $installed != 0 ]; then
+#  echo "Need to install xcode tools"
+#  read -p "Press enter to continue after completing the installation..."
+#else
+#  echo "Xcode Command Line Tools already installed"
+#fi
 
 #
 ##################################################################################
