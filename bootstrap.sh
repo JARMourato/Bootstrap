@@ -51,20 +51,20 @@ else
    read -p "Press enter to continue after completing ssh setup in github..."
 fi 
 
-
-#################################################################################
-#### Configure Directories
-#################################################################################
-
-rm -rf ~/Workspace
-mkdir ~/Workspace
-mkdir ~/Workspace/Git
-
-#################################################################################
-#### Start Configuration Process
-#################################################################################
-
-git clone git@github.com:jarmourato/Bootstrap.git ~/Workspace/Git/Bootstrap
-cd ~/Workspace/Git/Bootstrap
-./_set_up.sh
-echo "Done"
+#
+##################################################################################
+##### Configure Directories
+##################################################################################
+#
+#rm -rf ~/Workspace
+#mkdir ~/Workspace
+#mkdir ~/Workspace/Git
+#
+##################################################################################
+##### Start Configuration Process
+##################################################################################
+#
+#git clone git@github.com:jarmourato/Bootstrap.git ~/Workspace/Git/Bootstrap
+#cd ~/Workspace/Git/Bootstrap
+#./_set_up.sh
+#echo "Done"
