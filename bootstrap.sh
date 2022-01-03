@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -e # Immediately rethrows exceptions
-
 ################################################################################
 ### Configure SSH key
 ################################################################################
@@ -51,6 +49,19 @@ else
    read -p "Press enter to continue after completing ssh setup in github..."
 fi 
 
+##################################################################################
+##### Command line developer tools
+##################################################################################
+
+if type xcode-select >&- && xpath=$( xcode-select --print-path ) && test -d "${xpath}" && test -x "${xpath}" ; then
+   echo "Xcode Command Line Tools already installed"
+else
+   echo "Need to install xcode tools"
+   xcode-select --install
+   echo "Requested install"
+   read -p "Press enter to continue after completing the installation..."
+fi
+
 
 #################################################################################
 #### Configure Directories
@@ -63,6 +74,8 @@ mkdir ~/Workspace/Git
 #################################################################################
 #### Start Configuration Process
 #################################################################################
+
+set -e # Immediately rethrows exceptions
 
 git clone git@github.com:jarmourato/Bootstrap.git ~/Workspace/Git/Bootstrap
 cd ~/Workspace/Git/Bootstrap
