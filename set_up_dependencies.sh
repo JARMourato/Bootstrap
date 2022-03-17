@@ -4,7 +4,7 @@
 ### Install Dependencies
 ################################################################################
 
-set -e # Immediately rethrows exceptions
+# set -e # Immediately rethrows exceptions
 # set -x # Logs every command on Terminal
 
 echo "🚀 Starting setup"
