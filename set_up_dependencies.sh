@@ -4,7 +4,7 @@
 ### Install Dependencies
 ################################################################################
 
-set -e # Immediately rethrows exceptions
+# set -e # Immediately rethrows exceptions
 # set -x # Logs every command on Terminal
 
 echo "🚀 Starting setup"
@@ -12,25 +12,30 @@ echo "🚀 Starting setup"
 # Ask for the administrator password upfront
 sudo -v
 
-# In case paths have not been set up yet
-source ~/.zshrc
-
 # Install Homebrew if not already installed
 if test ! $(which brew); then
 	echo "🍺 Installing homebrew..."
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# In case paths have not been set up yet
+source ~/.zshrc
+
 echo "🍺 Updating homebrew..."
 brew update
 
-if test ! $(xcode-select -p); then
+# Check Xcode
+xcode=`ls /Applications | grep 'Xcode-'`
+
+if [[ ! -z "$xcode" ]]; then
+	echo "Xcode is already installed 🎉"
+else
 	# Install Xcode 
 	brew install --cask xcodes
-	/bin/bash -c "$(open -a xcodes)"
+	/bin/bash -c "$(open -a Xcodes)"
 	read -p "Press enter to continue after installing Xcode..." < /dev/tty
-
-	if test ! $(xcode-select -p); then
+	
+	if [[ -z "$xcode" ]]; then
 		echo "Xcode not installed"
 		exit 1
 	fi
